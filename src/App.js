@@ -1,5 +1,10 @@
 import { useParams } from "react-router-dom";
 import { Header } from "./Layout";
+import { AnimatePresence } from "framer-motion";
+
+const Component = ({ component }) => {
+  return component;
+};
 
 const App = (props) => {
   const params = useParams();
@@ -15,7 +20,14 @@ const App = (props) => {
           icon: value?.icon,
         }))}
       />
-      {links?.find((o) => o?.pageName === params?.[paramKey])?.render}
+      <AnimatePresence mode="wait">
+        {links?.map(
+          (o) =>
+            o?.pageName === params?.[paramKey] && (
+              <Component key={o?.pageName} component={o?.render} />
+            )
+        )}
+      </AnimatePresence>
     </>
   );
 };
