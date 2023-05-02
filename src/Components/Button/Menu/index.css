@@ -1,0 +1,25 @@
+.btn {
+ text-transform: uppercase;
+ text-decoration: none;
+ color: var(--text_color);
+ background: transparent;
+ padding: 5px 22px;
+ border: 1px solid var(--border);
+ border-radius: 500px;
+ display: inline-block;
+ transition: all .2s;
+ position: relative;
+ cursor: pointer;
+}
+
+.btn:hover {
+ transform: translateY(-1px);
+ box-shadow: 0 5px 10px rgba(27, 27, 27, 0.205);
+}
+
+.btn:active {
+ transform: translateY(-2px);
+}
+.btn:active span {
+ transform: translateY(3px);
+}

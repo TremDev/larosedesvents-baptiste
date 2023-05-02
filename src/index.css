@@ -1,13 +1,84 @@
+@font-face {
+  font-family: "Aviano-Sans-Light";
+  src: url("./assets/fonts/Aviano-Sans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "YesevaOne-Regular";
+  src: url("./assets/fonts/YesevaOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica-Regular";
+  src: url("./assets/fonts/Helvetica.ttf") format("truetype");
+}
+
+:root {
+  --body_bg: rgb(245, 245, 245);
+  --nav_bg: rgba(248, 248, 248, 0.5);
+  --text_color: #121113;
+  --border: #5e5e5e;
+}
+[data-theme="dark"] {
+  --body_bg: #121113;
+  --nav_bg: #12111383;
+  --text_color: #fff;
+  --border: #5e5e5e;
+}
+* {
+  transition: all 0.45s ease-in-out;
+}
+
+[data-theme="dark"] .filter {
+  filter: invert(1)
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  height: 100svh;
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--body_bg);
+}
+
+a, span, h1 {
+  font-family: "Helvetica-Regular";
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header {
+  position: fixed;
+  z-index: 100;
+}
+
+.progress-bar {
+  background: red;
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+.background {
+  overflow: hidden;
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background span {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
