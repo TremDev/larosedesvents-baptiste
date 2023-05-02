@@ -19,9 +19,10 @@ const Darkmode = () => {
     e.target.checked ? setDarkMode() : setLightMode();
   return (
     <label className="switch">
-      <input type="checkbox" onChange={darkModeToggle} defaultValue={selectedTheme === "light"}/>
-      <span className="slider round"></span>
+      <input type="checkbox" onChange={darkModeToggle} defaultChecked={selectedTheme === "dark"} className="checkbox"/>
+      <span className="slider "></span>
     </label>
+    
   );
 };
 
